@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+from pages.views import CustomPasswordChangeView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/password/change/',CustomPasswordChangeView.as_view(),name='account_change_password'),
     path('accounts/', include('allauth.urls')),
     path('',include('pages.urls',namespace='pages')),
+    path('wisher/',include('wish.urls',namespace='wish')),
 ]

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <a class="mt-2 btn btn-primary" href="{% url 'wish:add' %}">+Add</a>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+        {% if object_list.exists %}
+        <div class="col-12">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Birthday</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for object in object_list %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td><a href="{% url 'wish:update' slug=object.slug %}">{{object.name|title}}</a></td>
+                        <td>{{object.birth_date|date:"j F, Y"}}</td>
+                        <td>{{object.email}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="col-12" >
+            <h2 style="color: goldenrod;" class="text-center">Receiver's List is Empty!</h2>
+            <p class="lead text-center" ><a href="{% url 'wish:add' %}">Add?</a></p>
+        </div>
+       {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}
