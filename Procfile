@@ -1,3 +1,3 @@
 web: gunicorn wisher_src.wsgi
 
-clock: python wisher_src/auto_send.py
+clock: python manage.py runscript autosend
