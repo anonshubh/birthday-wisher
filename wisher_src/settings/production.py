@@ -50,6 +50,8 @@ INSTALLED_APPS = [
 
 ADMINS = [('Shubh Pathak','wishme07live@gmail.com')]
 
+DEFAULT_FROM_EMAIL = 'Birthday Wisher <wishme07live@gmail.com>'
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
