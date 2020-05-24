@@ -8,7 +8,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 
 sched = BlockingScheduler()
 
-@sched.scheduled_job('cron',hour=00)
+@sched.scheduled_job('cron',hour=24)
 def auto_send():
     today = datetime.now()
     obj = Birthday.objects.filter(birth_date__day=today.day,birth_date__month=today.month)

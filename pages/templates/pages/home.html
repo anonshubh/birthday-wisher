@@ -1,13 +1,30 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
 <div class="container">
     <div class="row">
-        <div class="col-12 text-center">
-            <h2>Automated Birthday-Wish Sender</h2>
+        <div class="col-12">
+            <h2 style="color:darkgray;" class="col-12 text-center">Automated Birthday Message Sender</h2>
         </div>
     </div>
 </div>
-
+</div>
+<div class="jumbotron" style="background-color:mistyrose;">
+    <h2 class=" text-center">Ever Forgot wishing Loved ones on Birthday?</h2>
+    <p class="lead text-center">Start adding the Birthday's of your Family and Friends to our List and an Email will be sent on that particular date!</p>
+    <hr class="my-4">
+    <p>Go through our Documentation {% if not user.is_authenticated %}or Login{% endif %}</p>
+    <div class="row" >
+        <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
+            <a class="btn btn-outline-danger btn-lg btn-block" href="#" role="button">Get Started</a>
+        </div>
+        {% if not user.is_authenticated %}
+        <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
+            <a class="btn btn-outline-success btn-lg btn-block" href="{% url 'account_login' %}"" role="button">Login</a>
+        </div>
+        {% endif %}
+    </div>
+  </div>
 {% endblock %}
