@@ -9,7 +9,7 @@ User = get_user_model()
 class Birthday(models.Model):
     wisher = models.ForeignKey(User,on_delete=models.CASCADE)
     name = models.CharField(max_length=128)
-    slug = AutoSlugField(populate_from='name')
+    slug = AutoSlugField(populate_from='name',unique=True)
     birth_date = models.DateField('Birthday',help_text='Valid Format: YYYY-MM-DD')
     wish = models.TextField()
     email = models.EmailField(help_text="Email of Receiver")
