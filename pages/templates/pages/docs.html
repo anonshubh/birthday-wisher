@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2>Follow the Four Steps Below</h2>
+    <div class="row">
+        <div class="col-lg-4 col-sm-12 mx-2 my-2">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'docs/1.png' %}" class="card-img-top img-fluid" alt="Unable to Load Image">
+                <div class="card-body">
+                  <p class="card-text lead">(1) - Signup and Verify your Account as Email will be sent from Your Id itself.</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4 col-sm-12 mx-2 my-2">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'docs/2.png' %}" class="card-img-top img-fluid" alt="Unable to Load Image">
+                <div class="card-body">
+                  <p class="card-text lead">(2) - Go to the 'List' menu and select +Add to Start Adding receivers to list.</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4 col-sm-12 mx-2 my-2">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'docs/3.png' %}" class="card-img-top img-fluid" alt="Unable to Load Image">
+                <div class="card-body">
+                  <p class="card-text lead">(3) - Here the Email should be of Receiver's and Kindly check the Birthday Format.</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4 col-sm-12 mx-2 my-2">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'docs/4.png' %}" class="card-img-top img-fluid" alt="Unable to Load Image">
+                <div class="card-body">
+                  <p class="card-text lead">(4) - Select the Name to Update/Delete the Receiver.</p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

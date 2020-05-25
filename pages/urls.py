@@ -7,4 +7,5 @@ urlpatterns=[
     path('',views.IndexView.as_view(),name='home'),
     path('about/',views.AboutView.as_view(),name='about'),
     path('reach-us/',views.contact_view,name='contact'),
+    path('help/',views.Docs.as_view(),name='docs'),
 ]

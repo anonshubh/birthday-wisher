@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import ContactForm
+from django.conf import settings
 
 class IndexView(TemplateView):
     template_name = 'pages/home.html'
@@ -19,10 +20,13 @@ def contact_view(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         msg = request.POST.get('content')
-        send_mail(name,msg,email,[''],fail_silently=False)
+        send_mail(name,msg,email,[settings.DEFAULT_FROM_EMAIL],fail_silently=False)
     return render(request,'pages/contact.html', {'form':form})
 
 class CustomPasswordChangeView(LoginRequiredMixin,PasswordChangeView):
     @property
     def success_url(self):
         return reverse_lazy('pages:home')
+
+class Docs(TemplateView):
+    template_name = 'pages/docs.html'
