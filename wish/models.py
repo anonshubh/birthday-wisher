@@ -13,9 +13,10 @@ class Birthday(models.Model):
     birth_date = models.DateField('Birthday',help_text='Valid Format: YYYY-MM-DD')
     wish = models.TextField()
     email = models.EmailField(help_text="Email of Receiver")
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['name']
+        ordering = ['name','-timestamp']
 
     def __str__(self):
         return smart_str(self.name)
