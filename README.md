@@ -9,3 +9,5 @@ Back-end:-
 Python V3.8.2,
 Django V2.2.12
 
+db:- postgres 12
+
