@@ -5,6 +5,7 @@ Bootstrap v4.5
 
 Server-Side:-
 Django v2.2
+
 db:- postgres 12
 
 **Setup and Run Locally**
